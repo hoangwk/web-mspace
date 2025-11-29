@@ -1,71 +1,134 @@
-# M.Space - Landing Page
+# M.Space - Landing Page (React)
 
-Landing page chuyên nghiệp cho công ty M.Space - cung cấp dịch vụ ăn uống, thầu căn tin văn phòng và nguyên liệu nấu ăn.
+Landing page chuyên nghiệp cho công ty M.Space được xây dựng bằng React.js và Vite.
 
 ## 🌟 Tính năng
 
+- ✅ React.js với Vite (build tool nhanh)
 - ✅ Design hiện đại, responsive trên mọi thiết bị
-- ✅ Navigation menu với smooth scroll
-- ✅ Hero section ấn tượng
-- ✅ Giới thiệu về công ty và dịch vụ
-- ✅ 3 dịch vụ chính: Thầu căn tin, Cung cấp suất ăn, Set nguyên liệu
-- ✅ Section tính năng và lợi ích
-- ✅ Form liên hệ
-- ✅ Footer với thông tin đầy đủ
-- ✅ Animations và transitions mượt mà
+- ✅ Component-based architecture
+- ✅ Custom hooks (useInView cho animations)
+- ✅ Smooth scroll navigation
+- ✅ Form handling với React state
+- ✅ Intersection Observer API cho animations
+- ✅ Counter animations cho statistics
 
 ## 🚀 Cài đặt và chạy local
 
-1. Clone repository hoặc tải xuống project
-2. Mở file `index.html` trong trình duyệt
-3. Hoặc sử dụng local server:
+### Yêu cầu
+- Node.js 16+ và npm/yarn/pnpm
+
+### Cài đặt
 
 ```bash
-# Sử dụng Python
-python -m http.server 8000
+# Cài đặt dependencies
+npm install
 
-# Hoặc sử dụng Node.js (nếu có http-server)
-npx http-server
+# Chạy development server
+npm run dev
+
+# Build cho production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-Sau đó truy cập `http://localhost:8000`
+Sau khi chạy `npm run dev`, truy cập `http://localhost:5173`
 
 ## 📦 Cấu trúc project
 
 ```
 web-mspace/
-├── index.html          # File HTML chính
-├── styles.css          # File CSS styling
-├── script.js           # File JavaScript cho interactivity
-├── README.md           # File hướng dẫn
-└── .gitignore          # Git ignore file
+├── public/                 # Static files
+├── src/
+│   ├── components/         # React components
+│   │   ├── Navbar.jsx
+│   │   ├── Hero.jsx
+│   │   ├── About.jsx
+│   │   ├── Services.jsx
+│   │   ├── Features.jsx
+│   │   ├── Contact.jsx
+│   │   └── Footer.jsx
+│   ├── hooks/              # Custom hooks
+│   │   └── useInView.js
+│   ├── App.jsx             # Main App component
+│   ├── main.jsx            # Entry point
+│   └── styles.css          # Global styles
+├── index.html              # HTML template
+├── vite.config.js          # Vite configuration
+├── package.json
+└── README.md
 ```
 
 ## 🌐 Deploy lên GitHub Pages
 
 ### Cách 1: Sử dụng GitHub Actions (Khuyến nghị)
 
-1. Push code lên GitHub repository
-2. Vào Settings > Pages
-3. Chọn Source: "Deploy from a branch"
-4. Chọn branch `main` và folder `/ (root)`
-5. Save và đợi vài phút để GitHub Pages deploy
+1. Tạo file `.github/workflows/deploy.yml`:
 
-### Cách 2: Sử dụng gh-pages branch
+```yaml
+name: Deploy to GitHub Pages
 
-```bash
-# Tạo branch gh-pages
-git checkout -b gh-pages
+on:
+  push:
+    branches: [ main ]
 
-# Push lên GitHub
-git push origin gh-pages
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build
+        run: npm run build
+        
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
 ```
 
-Sau đó vào Settings > Pages và chọn branch `gh-pages`
+2. Push code lên GitHub
+3. Vào Settings > Pages
+4. Chọn Source: "GitHub Actions"
+5. Website sẽ tự động deploy sau mỗi lần push
+
+### Cách 2: Deploy thủ công
+
+```bash
+# Build project
+npm run build
+
+# Deploy dist folder lên gh-pages branch
+# (Sử dụng tool như gh-pages hoặc deploy thủ công)
+npx gh-pages -d dist
+```
+
+### Cấu hình base path
+
+File `vite.config.js` đã được cấu hình với `base: '/web-mspace/'`. 
+Nếu repository của bạn có tên khác, hãy cập nhật trong `vite.config.js`:
+
+```js
+export default defineConfig({
+  plugins: [react()],
+  base: '/your-repo-name/',  // Thay đổi tên repo ở đây
+})
+```
 
 ### URL sau khi deploy
 
-Sau khi deploy thành công, website sẽ có URL dạng:
+Sau khi deploy thành công, website sẽ có URL:
 ```
 https://[username].github.io/web-mspace/
 ```
@@ -74,7 +137,7 @@ https://[username].github.io/web-mspace/
 
 ### Thay đổi màu sắc
 
-Chỉnh sửa các biến CSS trong file `styles.css`:
+Chỉnh sửa các biến CSS trong file `src/styles.css`:
 
 ```css
 :root {
@@ -87,11 +150,11 @@ Chỉnh sửa các biến CSS trong file `styles.css`:
 
 ### Thay đổi nội dung
 
-Chỉnh sửa trực tiếp trong file `index.html`:
-- Thông tin công ty
-- Dịch vụ
-- Thông tin liên hệ
-- Logo và branding
+Chỉnh sửa trong các component files:
+- `src/components/About.jsx` - Thông tin công ty
+- `src/components/Services.jsx` - Dịch vụ
+- `src/components/Contact.jsx` - Thông tin liên hệ
+- `src/components/Hero.jsx` - Hero section
 
 ## 📱 Responsive Design
 
@@ -102,14 +165,16 @@ Website được thiết kế responsive và hoạt động tốt trên:
 
 ## 🔧 Technologies
 
-- HTML5
-- CSS3 (Custom Properties, Grid, Flexbox)
-- Vanilla JavaScript (ES6+)
-- Google Fonts (Inter)
+- **React 18** - UI library
+- **Vite** - Build tool và dev server
+- **CSS3** - Styling với Custom Properties
+- **Intersection Observer API** - Scroll animations
 
-## 📝 License
+## 📝 Scripts
 
-© 2024 M.Space. All rights reserved.
+- `npm run dev` - Chạy development server
+- `npm run build` - Build cho production
+- `npm run preview` - Preview production build
 
 ## 📧 Liên hệ
 
@@ -119,5 +184,4 @@ Website được thiết kế responsive và hoạt động tốt trên:
 
 ---
 
-Made with ❤️ for M.Space
-
+Made with ❤️ for M.Space using React
