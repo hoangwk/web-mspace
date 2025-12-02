@@ -69,9 +69,9 @@ const About = () => {
           <div className="about-text">
             <p>
               M.Space là công ty chuyên cung cấp các giải pháp ăn uống toàn diện
-              cho doanh nghiệp và khách hàng cá nhân. Với nhiều năm kinh nghiệm
-              trong ngành, chúng tôi tự hào mang đến những dịch vụ chất lượng
-              cao và đáng tin cậy.
+              cho doanh nghiệp và khách hàng cá nhân, test. Với nhiều năm kinh
+              nghiệm trong ngành, chúng tôi tự hào mang đến những dịch vụ chất
+              lượng cao và đáng tin cậy.
             </p>
             <p>
               Chúng tôi hiểu rằng bữa ăn ngon không chỉ là nhu cầu thiết yếu mà
