@@ -1,57 +1,81 @@
 import React from 'react'
 import { useInView } from '../hooks/useInView'
 
-const FeatureItem = ({ icon, title, description }) => {
+const DishCard = ({ image, name, category, description, tags }) => {
   const { ref, isInView } = useInView({ threshold: 0.1 })
 
   return (
-    <div 
-      className="feature-item"
+    <div
+      className="feature-item dish-card"
       ref={ref}
       style={{
         opacity: isInView ? 1 : 0,
         transform: isInView ? 'translateY(0)' : 'translateY(30px)',
-        transition: 'opacity 0.6s ease, transform 0.6s ease'
+        transition: 'opacity 0.6s ease, transform 0.6s ease',
+        padding: 0,
+        overflow: 'hidden'
       }}
     >
-      <div className="feature-icon">{icon}</div>
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <div className="dish-image-wrap">
+        <img src={image} alt={name} className="dish-image" />
+      </div>
+      <div className="dish-body">
+        <div className="dish-category">{category}</div>
+        <h3 className="dish-name">{name}</h3>
+        <p className="dish-desc">{description}</p>
+        <div className="dish-tags">
+          {tags.map((tag, i) => (
+            <span key={i} className="dish-tag">{tag}</span>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
 
 const Features = () => {
-  const features = [
+  const dishes = [
     {
-      icon: '✨',
-      title: 'Chất lượng cao',
-      description: 'Nguyên liệu tươi ngon, chế biến theo tiêu chuẩn vệ sinh an toàn thực phẩm'
+      image: '/images/dish_com_ga.png',
+      name: 'Cơm gà xối mỡ',
+      category: 'Món Á',
+      description: 'Cơm trắng dẻo thơm, gà chiên vàng giòn xối mỡ nóng, ăn kèm dưa leo và nước chấm đặc biệt.',
+      tags: ['Phổ biến', 'Văn phòng', 'Gia đình']
     },
     {
-      icon: '⚡',
-      title: 'Phục vụ nhanh',
-      description: 'Giao hàng đúng giờ, phục vụ nhanh chóng, không làm gián đoạn công việc'
+      image: '/images/dish_bo_luc_lac.png',
+      name: 'Bò lúc lắc sốt tiêu đen',
+      category: 'Món Á – Âu',
+      description: 'Thịt bò Mỹ hảo hạng xào tỏi bơ, sốt tiêu đen đậm đà, dùng kèm cơm trắng hoặc khoai tây chiên.',
+      tags: ['Cao cấp', 'Đặc biệt']
     },
     {
-      icon: '💰',
-      title: 'Giá cả hợp lý',
-      description: 'Mức giá cạnh tranh, phù hợp với ngân sách của doanh nghiệp và cá nhân'
+      image: '/images/dish_bun_bo_hue.png',
+      name: 'Bún bò Huế',
+      category: 'Món Việt',
+      description: 'Nước dùng hầm xương đậm vị, tôm cua chắc thịt, rau sống tươi mát — đặc sản miền Trung mỗi ngày.',
+      tags: ['Truyền thống', 'Dinh dưỡng']
     },
     {
-      icon: '🎯',
-      title: 'Linh hoạt',
-      description: 'Đặt hàng linh hoạt, tùy chỉnh theo nhu cầu và số lượng'
+      image: '/images/dish_salad_ga.png',
+      name: 'Salad ức gà quinoa',
+      category: 'Healthy',
+      description: 'Ức gà áp chảo mềm mọng, quinoa giàu đạm, rau xanh tươi, sốt mè rang thanh nhẹ.',
+      tags: ['Healthy', 'Ít calo', 'Dinh dưỡng']
     },
     {
-      icon: '👨‍🍳',
-      title: 'Đội ngũ chuyên nghiệp',
-      description: 'Đầu bếp và nhân viên được đào tạo chuyên nghiệp, giàu kinh nghiệm'
+      image: '/images/dish_canh_chua.png',
+      name: 'Canh chua cá lóc',
+      category: 'Món Việt',
+      description: 'Cá lóc đồng tươi, nước dùng chua thanh từ me, thơm, cà chua kết hợp giá và rau om.',
+      tags: ['Truyền thống', 'Gia đình']
     },
     {
-      icon: '🌱',
-      title: 'Bền vững',
-      description: 'Cam kết sử dụng nguyên liệu bền vững, thân thiện với môi trường'
+      image: '/images/dish_ca_ri_ga.png',
+      name: 'Cà ri gà coconut',
+      category: 'Món Á',
+      description: 'Gà ta hầm mềm trong nước cốt dừa béo ngậy, gia vị cà ri thơm nồng, dùng kèm bánh mì hoặc cơm.',
+      tags: ['Phổ biến', 'Đặc biệt']
     }
   ]
 
@@ -59,12 +83,12 @@ const Features = () => {
     <section id="features" className="features">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Tại sao chọn M.Space?</h2>
-          <p className="section-subtitle">Những lợi ích vượt trội chúng tôi mang lại</p>
+          <h2 className="section-title">Thực đơn nổi bật</h2>
+          <p className="section-subtitle">Những món ăn được yêu thích nhất từ bếp M.SPACE — chế biến tươi mỗi ngày, đảm bảo dinh dưỡng và hương vị</p>
         </div>
         <div className="features-grid">
-          {features.map((feature, index) => (
-            <FeatureItem key={index} {...feature} />
+          {dishes.map((dish, index) => (
+            <DishCard key={index} {...dish} />
           ))}
         </div>
       </div>
@@ -73,4 +97,3 @@ const Features = () => {
 }
 
 export default Features
-

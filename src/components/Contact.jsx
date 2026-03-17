@@ -70,19 +70,14 @@ const Contact = () => {
         <div className="contact-content">
           <div className="contact-info">
             <ContactItem 
-              icon="📧"
-              title="Email"
-              content="info@mspace.vn"
-            />
-            <ContactItem 
               icon="📞"
               title="Điện thoại"
-              content="1900 1234"
+              content="093 823 95 66"
             />
             <ContactItem 
               icon="📍"
               title="Địa chỉ"
-              content="123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh"
+              content="Thủ Đức, TP. Hồ Chí Minh"
             />
           </div>
           <form className="contact-form" onSubmit={handleSubmit}>

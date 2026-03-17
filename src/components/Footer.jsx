@@ -14,9 +14,7 @@ const Footer = () => {
   }
 
   const Logo = ({ size = 40 }) => (
-    <svg width={size} height={size} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 30L15 10L20 25L25 15L30 30" stroke="#4CAF50" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
+    <img src="/logo.svg" alt="M.SPACE" style={{ width: size, height: size, objectFit: 'contain' }} />
   )
 
   return (
@@ -28,7 +26,7 @@ const Footer = () => {
               <Logo size={40} />
               <span>M.SPACE</span>
             </div>
-            <p>Giải pháp ăn uống chuyên nghiệp cho văn phòng và siêu thị</p>
+            <p>Dịch vụ bữa ăn tiện lợi (Ready Meal Service) cho doanh nghiệp và gia đình</p>
           </div>
           <div className="footer-links">
             <h4>Liên kết nhanh</h4>
@@ -42,16 +40,15 @@ const Footer = () => {
           <div className="footer-services">
             <h4>Dịch vụ</h4>
             <ul>
-              <li>Thầu căn tin văn phòng</li>
-              <li>Cung cấp suất ăn</li>
-              <li>Set nguyên liệu nấu ăn</li>
+              <li>Officetaurant</li>
+              <li>Hometaurant</li>
+              <li>Tư vấn vận hành F&B</li>
             </ul>
           </div>
           <div className="footer-contact">
             <h4>Thông tin liên hệ</h4>
-            <p>📧 info@mspace.vn</p>
-            <p>📞 1900 1234</p>
-            <p>📍 123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh</p>
+            <p>📞 093 823 95 66</p>
+            <p>📍 Thủ Đức, TP. Hồ Chí Minh</p>
           </div>
         </div>
         <div className="footer-bottom">

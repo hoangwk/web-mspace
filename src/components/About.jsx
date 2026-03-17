@@ -60,24 +60,27 @@ const About = () => {
     <section id="about" className="about">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Về M.Space</h2>
+          <h2 className="section-title">Về M.SPACE</h2>
           <p className="section-subtitle">
-            Đối tác tin cậy cho dịch vụ ăn uống chuyên nghiệp
+            Đối tác tin cậy cho giải pháp ẩm thực chuyên nghiệp
           </p>
         </div>
         <div className="about-content">
           <div className="about-text">
             <p>
-              M.Space là công ty chuyên cung cấp các giải pháp ăn uống toàn diện
-              cho doanh nghiệp và khách hàng cá nhân, test. Với nhiều năm kinh
-              nghiệm trong ngành, chúng tôi tự hào mang đến những dịch vụ chất
-              lượng cao và đáng tin cậy.
+              Với chúng tôi, một bữa ăn ngon không chỉ mang lại giá trị dinh dưỡng cho cơ thể
+              mà còn góp phần tạo nên nguồn năng lượng tích cực cho tinh thần.
             </p>
             <p>
-              Chúng tôi hiểu rằng bữa ăn ngon không chỉ là nhu cầu thiết yếu mà
-              còn là yếu tố quan trọng tạo nên sự hài lòng và năng suất làm
-              việc. Vì vậy, M.Space cam kết cung cấp những giải pháp tốt nhất
-              với tiêu chuẩn vệ sinh an toàn thực phẩm cao nhất.
+              Tại M.SPACE, chúng tôi tập trung vào chất lượng trong từng khâu, từ lựa chọn nguyên liệu
+              đầu vào đến quy trình chế biến và đóng gói, nhằm đảm bảo mang đến những bữa ăn ngon miệng,
+              an toàn và đáng tin cậy cho khách hàng.
+            </p>
+            <p>
+              Với nhiều năm kinh nghiệm trong lĩnh vực ẩm thực, chúng tôi hiểu rằng ẩm thực không chỉ là
+              món ăn mà còn là một phần của văn hóa. Vì vậy, M.SPACE luôn lắng nghe, không ngừng cải tiến
+              và tôn trọng những khác biệt trong văn hóa ẩm thực của từng vùng miền và cộng đồng. Nhờ đó,
+              chúng tôi có thể mang đến những giải pháp ẩm thực phù hợp và đáp ứng tốt nhất nhu cầu của khách hàng.
             </p>
           </div>
           <div className="about-stats">

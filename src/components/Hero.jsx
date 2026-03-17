@@ -14,23 +14,28 @@ const Hero = () => {
   }
 
   const Logo = ({ size = 80 }) => (
-    <svg width={size} height={size} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 30L15 10L20 25L25 15L30 30" stroke="#4CAF50" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
+    <img src="/logo.svg" alt="M.SPACE" style={{ width: size, height: size, objectFit: 'contain' }} />
   )
 
   return (
     <section id="home" className="hero">
-      <div className="hero-background"></div>
+      <div className="hero-background" style={{
+        backgroundImage: 'url(/images/hero_background.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity: 0.35
+      }}></div>
       <div className="container">
         <div className="hero-content">
           <div className="hero-logo">
             <Logo size={80} />
           </div>
           <h1 className="hero-title">M.SPACE</h1>
-          <p className="hero-subtitle">Giải pháp ăn uống chuyên nghiệp cho văn phòng và siêu thị</p>
+          <p className="hero-subtitle">Dịch vụ bữa ăn tiện lợi (Ready Meal Service) cho doanh nghiệp và gia đình</p>
           <p className="hero-description">
-            Cung cấp dịch vụ thầu căn tin, suất ăn chất lượng và nguyên liệu nấu ăn tươi ngon
+            M.SPACE cung cấp các giải pháp ẩm thực tiện lợi, chất lượng và an toàn.
+            Với mô hình <strong>Officetaurant</strong>, chúng tôi giúp doanh nghiệp triển khai bữa ăn ngay tại văn phòng một cách chuyên nghiệp.
+            Đồng thời, dịch vụ <strong>Hometaurant</strong> mang đến những bữa ăn gia đình tiện nghi, dinh dưỡng và phù hợp với nhịp sống hiện đại.
           </p>
           <div className="hero-buttons">
             <a href="#contact" className="btn btn-primary" onClick={(e) => handleSmoothScroll(e, '#contact')}>
@@ -47,4 +52,3 @@ const Hero = () => {
 }
 
 export default Hero
-

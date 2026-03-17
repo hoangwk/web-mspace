@@ -29,36 +29,34 @@ const ServiceCard = ({ icon, title, description, features }) => {
 const Services = () => {
   const services = [
     {
-      icon: '🍽️',
-      title: 'Thầu căn tin văn phòng',
-      description: 'Quản lý và vận hành căn tin trong tòa nhà văn phòng với đầy đủ dịch vụ ăn uống, từ bữa trưa đến đồ uống, đảm bảo tiện lợi và chất lượng cho nhân viên.',
+      icon: '🏢',
+      title: 'Officetaurant – Mô hình nhà hàng tại văn phòng',
+      description: 'Officetaurant là giải pháp giúp doanh nghiệp tổ chức bữa ăn ngay tại văn phòng với chất lượng như nhà hàng, góp phần nâng cao trải nghiệm bữa ăn và phúc lợi cho nhân viên, đồng thời tối ưu chi phí và vận hành cho doanh nghiệp.',
       features: [
-        '✓ Menu đa dạng, thay đổi hàng ngày',
-        '✓ Vệ sinh an toàn thực phẩm',
-        '✓ Phục vụ nhanh chóng, tiện lợi',
-        '✓ Giá cả hợp lý'
+        '✓ Chất lượng món ăn theo tiêu chuẩn nhà hàng',
+        '✓ Đội ngũ phục vụ được đào tạo chuyên nghiệp',
+        '✓ Thực đơn đa dạng với nhiều phong cách ẩm thực từ Á đến Âu',
+        '✓ Quy trình vận hành được tối ưu cho môi trường văn phòng'
       ]
     },
     {
-      icon: '🥘',
-      title: 'Cung cấp suất ăn',
-      description: 'Cung cấp các suất ăn trưa chất lượng cao cho doanh nghiệp, được chế biến tươi ngon mỗi ngày với đầy đủ dinh dưỡng và hương vị đậm đà.',
+      icon: '🏠',
+      title: 'Hometaurant – Bữa ăn tiện lợi cho gia đình',
+      description: 'Hometaurant mang đến giải pháp bữa ăn gia đình tiện lợi, dinh dưỡng và phù hợp với nhịp sống hiện đại.',
       features: [
-        '✓ Đặt hàng linh hoạt theo nhu cầu',
-        '✓ Giao hàng tận nơi',
-        '✓ Đảm bảo dinh dưỡng cân bằng',
-        '✓ Đóng gói vệ sinh, an toàn'
+        '✓ Tiện lợi, giúp tiết kiệm thời gian',
+        '✓ Dinh dưỡng cân bằng và hợp lý',
+        '✓ Quy trình chế biến và đóng gói đảm bảo an toàn thực phẩm'
       ]
     },
     {
-      icon: '🛒',
-      title: 'Set nguyên liệu nấu ăn',
-      description: 'Cung cấp các set nguyên liệu đã được chuẩn bị sẵn để nấu các món ăn, bán tại siêu thị, giúp khách hàng tiết kiệm thời gian và dễ dàng chế biến.',
+      icon: '📊',
+      title: 'Tư vấn vận hành F&B',
+      description: 'Bên cạnh dịch vụ bữa ăn, M.SPACE còn cung cấp giải pháp tư vấn và tối ưu vận hành cho các mô hình F&B vừa và nhỏ. Với kinh nghiệm vận hành bếp trung tâm, hệ thống nhà cung cấp và quy trình chế biến chuyên nghiệp, chúng tôi hỗ trợ các doanh nghiệp F&B tối ưu chi phí vận hành, nâng cao hiệu quả hoạt động và phát triển bền vững.',
       features: [
-        '✓ Nguyên liệu tươi sống, chất lượng',
-        '✓ Đã được sơ chế sẵn',
-        '✓ Kèm hướng dẫn nấu ăn',
-        '✓ Đa dạng món ăn'
+        '✓ Tối ưu chi phí vận hành',
+        '✓ Nâng cao hiệu quả hoạt động',
+        '✓ Phát triển bền vững'
       ]
     }
   ]
@@ -67,8 +65,8 @@ const Services = () => {
     <section id="services" className="services">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Dịch vụ của chúng tôi</h2>
-          <p className="section-subtitle">Ba giải pháp chính cho mọi nhu cầu ăn uống</p>
+          <h2 className="section-title">Dịch vụ của M.SPACE</h2>
+          <p className="section-subtitle">M.SPACE cung cấp các giải pháp ẩm thực chuyên nghiệp cho doanh nghiệp và gia đình. Trong đó, Officetaurant là dịch vụ trọng tâm, mang đến mô hình bữa ăn chất lượng ngay tại nơi làm việc.</p>
         </div>
         <div className="services-grid">
           {services.map((service, index) => (
@@ -81,4 +79,3 @@ const Services = () => {
 }
 
 export default Services
-
