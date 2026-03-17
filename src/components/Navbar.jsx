@@ -1,34 +1,40 @@
 import React, { useState, useEffect } from 'react'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
+  const isHomePage = location.pathname === '/'
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.pageYOffset
-      setScrolled(scrollY > 100)
+      setScrolled(window.pageYOffset > 100)
     }
-
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleLinkClick = () => {
-    setIsMenuOpen(false)
-  }
-
-  const handleSmoothScroll = (e, targetId) => {
+  // Navigate to a home page section; if not on home, go home first then scroll
+  const handleSectionNav = (e, sectionId) => {
     e.preventDefault()
-    const target = document.querySelector(targetId)
-    if (target) {
-      const offsetTop = target.offsetTop - 80
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      })
-    }
     setIsMenuOpen(false)
+    if (isHomePage) {
+      const target = document.querySelector(sectionId)
+      if (target) {
+        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' })
+      }
+    } else {
+      navigate('/')
+      // After navigation, scroll to section
+      setTimeout(() => {
+        const target = document.querySelector(sectionId)
+        if (target) {
+          window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' })
+        }
+      }, 350)
+    }
   }
 
   const Logo = ({ size = 40 }) => (
@@ -41,20 +47,41 @@ const Navbar = () => {
       boxShadow: scrolled ? '0 2px 20px rgba(0, 0, 0, 0.1)' : '0 2px 10px rgba(0, 0, 0, 0.1)'
     }}>
       <div className="container">
-        <div className="nav-brand">
+        {/* Logo — always goes home */}
+        <Link to="/" className="nav-brand" style={{ textDecoration: 'none', color: 'inherit' }}>
           <div className="logo">
             <Logo size={40} />
           </div>
           <span className="brand-text">M.SPACE</span>
-        </div>
+        </Link>
+
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-          <li><a href="#home" onClick={(e) => handleSmoothScroll(e, '#home')}>Trang chủ</a></li>
-          <li><a href="#about" onClick={(e) => handleSmoothScroll(e, '#about')}>Về chúng tôi</a></li>
-          <li><a href="#services" onClick={(e) => handleSmoothScroll(e, '#services')}>Dịch vụ</a></li>
-          <li><a href="#features" onClick={(e) => handleSmoothScroll(e, '#features')}>Tính năng</a></li>
-          <li><a href="#contact" onClick={(e) => handleSmoothScroll(e, '#contact')}>Liên hệ</a></li>
+          <li>
+            <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); setIsMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>
+              Trang chủ
+            </a>
+          </li>
+          <li>
+            <a href="#about" onClick={(e) => handleSectionNav(e, '#about')}>Về chúng tôi</a>
+          </li>
+          <li>
+            <a href="#services" onClick={(e) => handleSectionNav(e, '#services')}>Dịch vụ</a>
+          </li>
+          <li>
+            <Link
+              to="/mon-an"
+              className={location.pathname.startsWith('/mon-an') ? 'nav-active' : ''}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Món ăn
+            </Link>
+          </li>
+          <li>
+            <a href="#contact" onClick={(e) => handleSectionNav(e, '#contact')}>Liên hệ</a>
+          </li>
         </ul>
-        <button 
+
+        <button
           className={`nav-toggle ${isMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle navigation"
@@ -69,4 +96,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-

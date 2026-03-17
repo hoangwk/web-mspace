@@ -15,7 +15,7 @@ const StatItem = ({ number, label }) => {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     if (ref.current) {
@@ -68,25 +68,52 @@ const About = () => {
         <div className="about-content">
           <div className="about-text">
             <p>
-              Với chúng tôi, một bữa ăn ngon không chỉ mang lại giá trị dinh dưỡng cho cơ thể
-              mà còn góp phần tạo nên nguồn năng lượng tích cực cho tinh thần.
+              Với chúng tôi, một bữa ăn ngon không chỉ mang lại giá trị dinh
+              dưỡng cho cơ thể mà còn góp phần tạo nên nguồn năng lượng tích cực
+              cho tinh thần.
             </p>
             <p>
-              Tại M.SPACE, chúng tôi tập trung vào chất lượng trong từng khâu, từ lựa chọn nguyên liệu
-              đầu vào đến quy trình chế biến và đóng gói, nhằm đảm bảo mang đến những bữa ăn ngon miệng,
-              an toàn và đáng tin cậy cho khách hàng.
+              Tại M.SPACE, chúng tôi tập trung vào chất lượng trong từng khâu,
+              từ lựa chọn nguyên liệu đầu vào đến quy trình chế biến và đóng
+              gói, nhằm đảm bảo mang đến những bữa ăn ngon miệng, an toàn và
+              đáng tin cậy cho khách hàng.
             </p>
             <p>
-              Với nhiều năm kinh nghiệm trong lĩnh vực ẩm thực, chúng tôi hiểu rằng ẩm thực không chỉ là
-              món ăn mà còn là một phần của văn hóa. Vì vậy, M.SPACE luôn lắng nghe, không ngừng cải tiến
-              và tôn trọng những khác biệt trong văn hóa ẩm thực của từng vùng miền và cộng đồng. Nhờ đó,
-              chúng tôi có thể mang đến những giải pháp ẩm thực phù hợp và đáp ứng tốt nhất nhu cầu của khách hàng.
+              Với nhiều năm kinh nghiệm trong lĩnh vực ẩm thực, chúng tôi hiểu
+              rằng ẩm thực không chỉ là món ăn mà còn là một phần của văn hóa.
+              Vì vậy, M.SPACE luôn lắng nghe, không ngừng cải tiến và tôn trọng
+              những khác biệt trong văn hóa ẩm thực của từng vùng miền và cộng
+              đồng. Nhờ đó, chúng tôi có thể mang đến những giải pháp ẩm thực
+              phù hợp và đáp ứng tốt nhất nhu cầu của khách hàng.
             </p>
           </div>
           <div className="about-stats">
             <StatItem number={500} label="Khách hàng hài lòng" />
             <StatItem number={50} label="Tòa nhà đối tác" />
             <StatItem number={1000} label="Suất ăn mỗi ngày" />
+          </div>
+        </div>
+
+        {/* Client logos */}
+        <div className="about-clients">
+          <p className="about-clients-label">Khách hàng tiêu biểu</p>
+          <div className="about-clients-logos">
+            <div className="client-logo-wrap">
+              <img
+                src="/images/logo_fpt.png"
+                alt="FPT Software"
+                className="client-logo"
+              />
+              <span className="client-logo-name">FPT Software</span>
+            </div>
+            <div className="client-logo-wrap">
+              <img
+                src="/images/logo_vietjet.png"
+                alt="VietJet Air"
+                className="client-logo"
+              />
+              <span className="client-logo-name">VietJet Air</span>
+            </div>
           </div>
         </div>
       </div>
