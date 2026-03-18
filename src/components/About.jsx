@@ -109,10 +109,20 @@ const About = () => {
             <div className="client-logo-wrap">
               <img
                 src="/images/logo_vietjet.png"
-                alt="VietJet Air"
+                alt="VietJet Air Academy"
                 className="client-logo"
               />
-              <span className="client-logo-name">VietJet Air</span>
+              <span className="client-logo-name">
+                Học viện Hàng không Vietjet
+              </span>
+            </div>
+            <div className="client-logo-wrap">
+              <img
+                src="/images/logo_vikki_bank.png"
+                alt="Vikki Bank"
+                className="client-logo"
+              />
+              <span className="client-logo-name">Vikki Bank</span>
             </div>
           </div>
         </div>

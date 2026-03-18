@@ -23,6 +23,8 @@ const ContactItem = ({ icon, title, content }) => {
   )
 }
 
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyGSxsuuxlhH1NfXrLiPjPEiBTbX5OxuHKiWEHLYOSj0ZiTGVfTyI2ibSB4qJcM1YE7/exec'
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -31,6 +33,7 @@ const Contact = () => {
     service: '',
     message: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e) => {
     setFormData({
@@ -39,25 +42,24 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    
-    alert(
-      'Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.\n\nThông tin đã gửi:\n' +
-      'Họ tên: ' + formData.name + '\n' +
-      'Email: ' + formData.email + '\n' +
-      'Điện thoại: ' + formData.phone + '\n' +
-      'Dịch vụ: ' + formData.service + '\n' +
-      'Tin nhắn: ' + formData.message
-    )
+    setIsSubmitting(true)
 
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      service: '',
-      message: ''
-    })
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+      alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.')
+      setFormData({ name: '', email: '', phone: '', service: '', message: '' })
+    } catch (error) {
+      alert('Có lỗi xảy ra. Vui lòng thử lại!')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -119,9 +121,9 @@ const Contact = () => {
                 required
               >
                 <option value="">Chọn dịch vụ quan tâm *</option>
-                <option value="canteen">Thầu căn tin văn phòng</option>
-                <option value="meals">Cung cấp suất ăn</option>
-                <option value="ingredients">Set nguyên liệu nấu ăn</option>
+                <option value="officetaurant">Mô hình Officetaurant</option>
+                <option value="hometaurant">Dịch vụ Hometaurant</option>
+                <option value="fnb-consulting">Dịch vụ tư vấn vận hành F&B</option>
               </select>
             </div>
             <div className="form-group">
@@ -133,8 +135,8 @@ const Contact = () => {
                 onChange={handleChange}
               ></textarea>
             </div>
-            <button type="submit" className="btn btn-primary btn-block">
-              Gửi yêu cầu
+            <button type="submit" className="btn btn-primary btn-block" disabled={isSubmitting}>
+              {isSubmitting ? 'Đang gửi...' : 'Gửi yêu cầu'}
             </button>
           </form>
         </div>
