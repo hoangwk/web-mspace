@@ -1,123 +1,129 @@
 // Shared dish data used by Features grid and DishDetailPage
 export const dishes = [
   {
-    id: 'com-ga-xoi-mo',
-    image: '/images/dish_com_ga.png',
-    name: 'Cơm gà xối mỡ',
-    category: 'Món Á',
-    description: 'Cơm trắng dẻo thơm, gà chiên vàng giòn xối mỡ nóng, ăn kèm dưa leo và nước chấm đặc biệt.',
-    tags: ['Phổ biến', 'Văn phòng', 'Gia đình'],
+    id: "ca-hu-kho-to",
+    image: "/images/dish_ca_hu_kho_to.jpg",
+    name: "Cá hú kho tộ",
+    category: "Món Việt",
+    description:
+      "Cá hú tươi kho trong nồi đất với nước màu caramel đậm đà, gia vị mặn ngọt hài hoà — món dân dã gợi nhớ bữa cơm gia đình.",
+    tags: ["Truyền thống", "Gia đình", "Dân dã"],
     details: {
-      calories: '~650 kcal',
-      servingSize: '1 người',
-      prepTime: '20 phút',
+      calories: "~480 kcal",
+      servingSize: "2–3 người",
+      prepTime: "40 phút",
       ingredients: [
-        'Gà ta tươi, ướp gia vị đặc biệt',
-        'Cơm gạo Jasmine dẻo thơm',
-        'Dưa leo, rau thơm tươi',
-        'Nước chấm chua ngọt đặc trưng',
-        'Hành phi vàng giòn'
-      ]
-    }
+        "Cá hú tươi làm sạch, cắt khoanh",
+        "Nước màu (đường thắng caramel)",
+        "Nước mắm ngon, tiêu, ớt tươi",
+        "Hành lá, sả băm tạo mùi thơm",
+        "Phục vụ kèm cơm trắng và canh rau",
+      ],
+    },
   },
   {
-    id: 'bo-luc-lac',
-    image: '/images/dish_bo_luc_lac.png',
-    name: 'Bò lúc lắc sốt tiêu đen',
-    category: 'Món Á – Âu',
-    description: 'Thịt bò Mỹ hảo hạng xào tỏi bơ, sốt tiêu đen đậm đà, dùng kèm cơm trắng hoặc khoai tây chiên.',
-    tags: ['Cao cấp', 'Đặc biệt'],
+    id: "com-tam-sai-gon",
+    image: "/images/dish_com_tam.jpg",
+    name: "Cơm tấm Sài Gòn",
+    category: "Món Việt",
+    description:
+      "Cơm tấm đặc sản Sài Gòn với sườn nướng thơm lừng, trứng ốp la, bì sợi, chả hấp — ăn kèm nước mắm chua ngọt đậm vị.",
+    tags: ["Phổ biến", "Đặc sản SG", "Văn phòng"],
     details: {
-      calories: '~720 kcal',
-      servingSize: '1 người',
-      prepTime: '25 phút',
+      calories: "~700 kcal",
+      servingSize: "1 phần",
+      prepTime: "25 phút",
       ingredients: [
-        'Thịt bò Mỹ (thăn nội) cắt vuông',
-        'Bơ lạt Anchor, tỏi băm',
-        'Sốt tiêu đen đặc chế',
-        'Ớt chuông đỏ, hành tây',
-        'Cơm trắng hoặc khoai tây chiên'
-      ]
-    }
+        "Cơm tấm gạo đặc sản Sài Gòn",
+        "Sườn heo nướng ướp xả sả đặc trưng",
+        "Trứng ốp la, bì sợi, chả hấp",
+        "Dưa leo, cà chua, đồ chua tươi",
+        "Nước mắm chua ngọt pha chuyên biệt",
+      ],
+    },
   },
   {
-    id: 'bun-bo-hue',
-    image: '/images/dish_bun_bo_hue.png',
-    name: 'Bún bò Huế',
-    category: 'Món Việt',
-    description: 'Nước dùng hầm xương đậm vị, tôm cua chắc thịt, rau sống tươi mát — đặc sản miền Trung mỗi ngày.',
-    tags: ['Truyền thống', 'Dinh dưỡng'],
+    id: "com-ga-xoi-mo",
+    image: "/images/dish_com_ga.png",
+    name: "Cơm gà xối mỡ",
+    category: "Món Á",
+    description:
+      "Cơm trắng dẻo thơm, gà chiên vàng giòn xối mỡ nóng, ăn kèm dưa leo và nước chấm đặc biệt.",
+    tags: ["Phổ biến", "Văn phòng", "Gia đình"],
     details: {
-      calories: '~580 kcal',
-      servingSize: '1 tô lớn',
-      prepTime: 'Hầm 4-6 giờ',
+      calories: "~650 kcal",
+      servingSize: "1 người",
+      prepTime: "20 phút",
       ingredients: [
-        'Bún tươi sợi to đặc trưng Huế',
-        'Xương heo, giò heo hầm mềm',
-        'Chả Huế, tiết heo',
-        'Sả, mắm ruốc — gia vị đặc trưng',
-        'Rau sống: giá, rau muống, chuối bắp'
-      ]
-    }
+        "Gà ta tươi, ướp gia vị đặc biệt",
+        "Cơm gạo Jasmine dẻo thơm",
+        "Dưa leo, rau thơm tươi",
+        "Nước chấm chua ngọt đặc trưng",
+        "Hành phi vàng giòn",
+      ],
+    },
   },
   {
-    id: 'salad-ga-quinoa',
-    image: '/images/dish_salad_ga.png',
-    name: 'Salad ức gà quinoa',
-    category: 'Healthy',
-    description: 'Ức gà áp chảo mềm mọng, quinoa giàu đạm, rau xanh tươi, sốt mè rang thanh nhẹ.',
-    tags: ['Healthy', 'Ít calo', 'Dinh dưỡng'],
+    id: "bo-luc-lac",
+    image: "/images/dish_bo_luc_lac.png",
+    name: "Bò lúc lắc sốt tiêu đen",
+    category: "Món Á – Âu",
+    description:
+      "Thịt bò Mỹ hảo hạng xào tỏi bơ, sốt tiêu đen đậm đà, dùng kèm cơm trắng hoặc khoai tây chiên.",
+    tags: ["Cao cấp", "Đặc biệt"],
     details: {
-      calories: '~420 kcal',
-      servingSize: '1 phần',
-      prepTime: '15 phút',
+      calories: "~720 kcal",
+      servingSize: "1 người",
+      prepTime: "25 phút",
       ingredients: [
-        'Ức gà ta áp chảo không dầu',
-        'Quinoa hữu cơ giàu protein',
-        'Rau xà lách, cải kale, cà chua bi',
-        'Bơ, dưa leo, cà rốt bào sợi',
-        'Sốt mè rang ít béo đặc chế'
-      ]
-    }
+        "Thịt bò Mỹ (thăn nội) cắt vuông",
+        "Bơ lạt Anchor, tỏi băm",
+        "Sốt tiêu đen đặc chế",
+        "Ớt chuông đỏ, hành tây",
+        "Cơm trắng hoặc khoai tây chiên",
+      ],
+    },
   },
   {
-    id: 'canh-chua-ca-loc',
-    image: '/images/dish_canh_chua.png',
-    name: 'Canh chua cá lóc',
-    category: 'Món Việt',
-    description: 'Cá lóc đồng tươi, nước dùng chua thanh từ me, thơm, cà chua kết hợp giá và rau om.',
-    tags: ['Truyền thống', 'Gia đình'],
+    id: "bun-bo-hue",
+    image: "/images/dish_bun_bo_hue.png",
+    name: "Bún bò Huế",
+    category: "Món Việt",
+    description:
+      "Nước dùng hầm xương đậm vị, tôm cua chắc thịt, rau sống tươi mát — đặc sản miền Trung mỗi ngày.",
+    tags: ["Truyền thống", "Dinh dưỡng"],
     details: {
-      calories: '~310 kcal',
-      servingSize: '2–3 người',
-      prepTime: '30 phút',
+      calories: "~580 kcal",
+      servingSize: "1 tô lớn",
+      prepTime: "Hầm 4-6 giờ",
       ingredients: [
-        'Cá lóc đồng tươi làm sạch',
-        'Me chua nguyên chất',
-        'Thơm (dứa), cà chua, đậu bắp',
-        'Giá đỗ, rau om, ngò gai',
-        'Nước mắm ngon, muối, đường'
-      ]
-    }
+        "Bún tươi sợi to đặc trưng Huế",
+        "Xương heo, giò heo hầm mềm",
+        "Chả Huế, tiết heo",
+        "Sả, mắm ruốc — gia vị đặc trưng",
+        "Rau sống: giá, rau muống, chuối bắp",
+      ],
+    },
   },
   {
-    id: 'ca-ri-ga-coconut',
-    image: '/images/dish_ca_ri_ga.png',
-    name: 'Cà ri gà coconut',
-    category: 'Món Á',
-    description: 'Gà ta hầm mềm trong nước cốt dừa béo ngậy, gia vị cà ri thơm nồng, dùng kèm bánh mì hoặc cơm.',
-    tags: ['Phổ biến', 'Đặc biệt'],
+    id: "canh-chua-ca-loc",
+    image: "/images/dish_canh_chua.png",
+    name: "Canh chua cá lóc",
+    category: "Món Việt",
+    description:
+      "Cá lóc đồng tươi, nước dùng chua thanh từ me, thơm, cà chua kết hợp giá và rau om.",
+    tags: ["Truyền thống", "Gia đình"],
     details: {
-      calories: '~680 kcal',
-      servingSize: '1–2 người',
-      prepTime: '45 phút',
+      calories: "~310 kcal",
+      servingSize: "2–3 người",
+      prepTime: "30 phút",
       ingredients: [
-        'Gà ta chặt miếng vừa ăn',
-        'Nước cốt dừa tươi nguyên chất',
-        'Khoai tây, cà rốt hầm mềm',
-        'Bột cà ri Ấn Độ, sả, gừng',
-        'Bánh mì baguette hoặc cơm trắng'
-      ]
-    }
-  }
-]
+        "Cá lóc đồng tươi làm sạch",
+        "Me chua nguyên chất",
+        "Thơm (dứa), cà chua, đậu bắp",
+        "Giá đỗ, rau om, ngò gai",
+        "Nước mắm ngon, muối, đường",
+      ],
+    },
+  },
+];
