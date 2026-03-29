@@ -10,6 +10,8 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import DishDetailPage from './pages/DishDetailPage'
 import DishListPage from './pages/DishListPage'
+import ProductsPage from './pages/ProductsPage'
+import ProductDetailPage from './pages/ProductDetailPage'
 
 const HomePage = () => (
   <>
@@ -40,6 +42,20 @@ function App() {
           <>
             <Navbar />
             <DishDetailPage />
+            <Footer />
+          </>
+        } />
+        <Route path="/san-pham" element={
+          <>
+            <Navbar />
+            <ProductsPage />
+            <Footer />
+          </>
+        } />
+        <Route path="/san-pham/:id" element={
+          <>
+            <Navbar />
+            <ProductDetailPage />
             <Footer />
           </>
         } />

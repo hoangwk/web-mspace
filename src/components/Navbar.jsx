@@ -69,6 +69,15 @@ const Navbar = () => {
           </li>
           <li>
             <Link
+              to="/san-pham"
+              className={location.pathname.startsWith('/san-pham') ? 'nav-active' : ''}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Sản phẩm
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/mon-an"
               className={location.pathname.startsWith('/mon-an') ? 'nav-active' : ''}
               onClick={() => setIsMenuOpen(false)}
